@@ -14,7 +14,6 @@ The closed preview is expected to last until June 5th, 2021. As soon as we get e
   * Does not include `remote_docker` VMs.
   * We are looking into making this functionality available on other executors in the future.
 * Only available to customers on paid plans (Performance, Scale, Custom).
-* SSH reruns are not currently supported (this will be supported shortly).
 
 ## Pricing
 
@@ -79,6 +78,17 @@ All jobs that are using the Known Outgoing IP feature will have one of the follo
 "54.81.162.133",
 "54.83.41.200",
 "54.92.235.88"
+```
+
+Known IPs for the core services (used to trigger jobs, exchange information about users between CircleCI and Github etc):
+
+```
+"18.214.70.5",
+"52.20.166.242",
+"35.174.249.131",
+"18.214.156.84",
+"54.236.156.101",
+"3.210.128.175"
 ```
 
 Please note that jobs can use any of the addresses above.
