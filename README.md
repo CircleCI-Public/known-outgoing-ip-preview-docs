@@ -92,3 +92,9 @@ IPs for core services (used to trigger jobs, exchange information about users be
 Please note that jobs can use any of the addresses above.
 
 During the preview phase, this list can change at any time. Once the feature is generally available, the list will be stable. We are planning on offering a way to receive a notification when the list of IP addresses is updated.
+
+A machine-consumable list of the IP address ranges *for jobs* can be found on a [DNS A record](https://dnsjson.com/jobs.knownips.circleci.com/A.json).
+
+A machine-consumable list of the IP address ranges *for core services* can be found on a separate [DNS A record](https://dnsjson.com/core.knownips.circleci.com/A.json).
+
+A machine-consumable list of both *jobs and core services IP address ranges* can be found on a separate [DNS A record](https://dnsjson.com/all.knownips.circleci.com/A.json).
