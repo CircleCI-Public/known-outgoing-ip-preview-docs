@@ -1,14 +1,12 @@
-# Known Outgoing IPs preview documentation
+# IP Ranges preview documentation
 
-The Known Outgoing IP feature is a way for CircleCI customers to configure access to restricted environments from CircleCI jobs. As a part of this feature, CircleCI provides a list of known IP addresses associated with the CircleCI service, and customers can opt certain jobs into using those IP addresses.
+The IP Ranges feature is a way for CircleCI customers to configure access to restricted environments from CircleCI jobs. As a part of this feature, CircleCI provides a list of IP addresses associated with the CircleCI service, and customers can opt certain jobs into using those IP addresses.
 
 ## Feature availability
 
 The feature is currently available in closed preview. Only customers that have been invited can access the feature at the moment.
 
-The closed preview is expected to last until June 5th, 2021. As soon as we get enough feedback in the preview, we’ll work on making the feature available more broadly.
-
-## Known limitations in the current version
+## Limitations in the current version
 
 * Only available on the Docker executor.
   * Does not include `remote_docker` VMs.
@@ -17,13 +15,13 @@ The closed preview is expected to last until June 5th, 2021. As soon as we get e
 
 ## Pricing
 
-Pricing will be calculated based on network data usage of the jobs opted into the Known Outgoing IP feature. Only the traffic of the opted-in jobs will be counted — you can of course mix jobs with and without the Known Outgoing IP feature within the same workflow or pipeline.
+Pricing will be calculated based on network data usage of the jobs opted into the IP Ranges feature. Only the traffic of the opted-in jobs will be counted — you can of course mix jobs with and without the IP Ranges feature within the same workflow or pipeline.
 
 Specific rates per GB are still to be confirmed.
 
-We are planning on excluding data usage due to workspaces, caches, and artifacts from the Known Outgoing IP charges. Keep in mind that data usage for these features may be charged separately in the future.
+We are planning on excluding data usage due to workspaces, caches, and artifacts from the IP Ranges charges. Keep in mind that data usage for these features may be charged separately in the future.
 
-## Example config that uses the Known Outgoing IP feature
+## Example config that uses the IP Ranges feature
 
 Here’s a config snippet that runs a simple `curl` command with a deterministic IP:
 
@@ -31,7 +29,7 @@ Here’s a config snippet that runs a simple `curl` command with a deterministic
 version: 2.1
 jobs:
   build:
-    known_outgoing_ip: true # opts the job into the known IP range
+    circleci_ip_ranges: true # opts the job into the IP ranges
     docker:
       - image: curlimages/curl
     steps:
@@ -44,9 +42,9 @@ workflows:
 
 Note: `http://whatismyip.akamai.com` is a service offered by Akamai that returns the IP address used to make a request in the response. We use it here for illustrative purposes, please replace the steps in the job above with your job content.
 
-## List of IP addresses associated with the Known Outgoing IP feature
+## List of IP addresses associated with the IP Ranges feature
 
-All jobs that are using the Known Outgoing IP feature will have one of the following IP addresses associated with them:
+All jobs that are using the IP Ranges feature will have one of the following IP addresses associated with them:
 
 ```
 "107.22.40.20",
@@ -80,7 +78,7 @@ All jobs that are using the Known Outgoing IP feature will have one of the follo
 "54.92.235.88"
 ```
 
-Known IPs for the core services (used to trigger jobs, exchange information about users between CircleCI and Github etc):
+IPs for core services (used to trigger jobs, exchange information about users between CircleCI and Github etc):
 
 ```
 "18.214.70.5",
